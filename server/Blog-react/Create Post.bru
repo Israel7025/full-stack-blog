@@ -1,0 +1,20 @@
+meta {
+  name: Create Post
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:3000/posts
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Title from bruno",
+    "slug": "slug from bruno1",
+    "user": "675e6f1f2992512f7f390b27",
+    "content": "Content from bruno"
+  }
+}
