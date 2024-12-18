@@ -21,4 +21,10 @@ export const clerkWebHook = async (req, res) => {
             message: 'Webhook verification failed!',
         });
     }
+
+    if (evt.type === 'user.created') {
+        const newUser = new User({
+            
+        })
+      }
 }
