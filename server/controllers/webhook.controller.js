@@ -8,4 +8,17 @@ export const clerkWebHook = async (req, res) => {
         throw new Error("Webhook secret needed!");
         
     }
+
+    const payload = req.body;
+    const headers = req.headers;
+
+    const wh = new Webhook(secret);
+    let evt;
+    try {
+        evt = wh.verify(payload, headers);
+    } catch (err) {
+        res.status(400).json({
+            message: 'Webhook verification failed!',
+        });
+    }
 }
