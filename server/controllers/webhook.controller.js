@@ -24,12 +24,13 @@ export const clerkWebHook = async (req, res) => {
         });
     }
 
-    console.log(evt.data);
+    //  console.log(evt.data);
     
 
-    // if (evt.type === 'user.created') {
-    //     const newUser = new User({
-    //         clerkUserId: evt.data.id,
-    //     })
-    //   }
+    if (evt.type === 'user.created') {
+        const newUser = new User({
+            clerkUserId: evt.data.id,
+            username: evt.data
+        })
+      }
 }
